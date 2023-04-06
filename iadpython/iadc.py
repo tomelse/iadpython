@@ -42,6 +42,9 @@ __all__ = ('basic_rt',
 libiad_path = ctypes.util.find_library("libiad")
 
 if not libiad_path:
+    libiad_path = ctypes.util.find_library("iad")
+
+if not libiad_path:
     print("Unable to find the libiad library.")
     print("     macOS   = 'libiad.dylib'")
     print("     unix    = 'libiad.so'")
